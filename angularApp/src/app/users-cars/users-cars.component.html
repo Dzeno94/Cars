@@ -1,0 +1,23 @@
+
+<div class="row mx-0">
+  <div class=" col-sm-12 col-md-4 col-lg-3 col-xl-3 mb-2" *ngFor="let car of cars">
+    <div class="card" >
+      <div  >
+      <img class="card-image" [src]="car.image" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h1>Title:{{car.name}}</h1>
+        
+        <span class="price">{{car.price}} KM</span>
+      </div>
+      <button (click)="deleteUserCar(car.id)" class="btn btn-danger ">Delete Car</button>
+      <button (click)="displayChangeImg()" class="btn btn-primary">Add Image</button>
+      <div *ngIf="change">
+         <input class="car-img-input" [ngModelOptions]="{standalone: true}" [(ngModel)]="carImgUrl" type="text">
+      <button (click)="saveCarImgUrl(car.id)" class="btn btn-primary">Save image</button>
+      </div>
+    </div>
+  </div>
+  
+    </div>
+    
+</div>

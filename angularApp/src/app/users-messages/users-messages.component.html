@@ -1,0 +1,19 @@
+<div class="wrapper d-inline-flex " *ngFor="let message of messages">
+    <div class="content">
+      <img class="userImg" [src]="message.image" alt="...">  <h3>{{message.username}}</h3>
+        <hr>
+      <div class="message">{{message.message}}</div>
+      <div class="d-flex flex-row align-items-center">
+        <p  class="small text-muted mb-0">{{message.messageTime}}</p>
+        
+        
+      </div>
+      <button (click)="replyToogleBtn()" class="btn btn-primary">Reply</button>
+      <div *ngIf="replyToogle">
+        <textarea  [(ngModel)]="replyTxt" rows="10"></textarea>
+      <button (click)="replyMsg(message.fromUserId,message.toUserId)" class="replyBtn btn btn-primary">Send reply</button>
+      </div>
+      
+      <button (click)="deleteMsg(message.id)" class="btn btn-danger">Delete</button>
+    </div>
+  </div>

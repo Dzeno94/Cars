@@ -1,0 +1,57 @@
+.login-form {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    margin:5% auto; 
+
+}
+
+.login-form h1 {
+    text-align: center;
+    margin: 55px 0;
+    font-size: 42px;
+}
+
+.login-form input, .blog-input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #889199;
+    font-size: 18px;
+    outline: none;
+}
+
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,19,121,1) 42%, rgba(192,0,255,1) 100%);
+}
+
+.login-btn:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+#login-form p {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.error-msg {
+    font-size: 22px;
+    color: red;
+    font-weight: 400;
+    display: none;
+}

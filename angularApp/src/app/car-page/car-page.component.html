@@ -1,0 +1,46 @@
+
+<div class="content-conteiner d-flex flex-column">
+  <div class="card-container d-inline-flex">
+    <div  class="card" >
+      <div>
+        
+        <h4>{{car.username}} </h4>
+        
+
+        <carousel  [showIndicators]="true">
+          <slide *ngFor="let slide of carImages; let index=index">
+             <img class="displayImage " [src]="slide.image" alt="image slide" >
+             
+          </slide>
+       </carousel>
+       
+        
+        </div>
+      
+      <div class="card-body">
+          <h1>Title: {{car.name}}</h1>
+        <hr>
+        <p>Price: {{car.price}}</p>
+        <hr>
+        <p>Mark: {{car.mark}}</p>
+        <hr>
+        <p>Model: {{car.model}}</p>
+        <hr>
+        <p>Year: {{car.year}}</p>
+        <hr>
+        <p>Milage: {{car.milage}}</p>
+        <hr>
+        <p>Fuel: {{car.fuel}}</p>
+        <hr>
+        <p>Description: {{car.description}}</p>
+        <hr>
+
+      </div>
+      <button *ngIf="isUserLogged" (click)="buyCar()" class="buybtn btn btn-primary" >Buy</button>
+    </div>
+  </div>
+      <app-comment [carid]="carIdNum" class="comment"></app-comment>
+    </div>
+
+
+

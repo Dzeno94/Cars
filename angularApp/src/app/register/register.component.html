@@ -1,0 +1,60 @@
+<div class="register-form col-xs-12">
+
+    <h1>Register</h1>
+
+    <form (submit)="registerUser($event)">
+      
+      <div class="mb-3 col-sm-5" >
+
+        <label   class="form-label">First Name</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="user.firstName" type="text" class="form-control"  >
+        <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+       
+      </div>
+
+      <div class="mb-3">
+
+        <label  class="form-label">Last name</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="user.lastName" type="text" class="form-control" >
+        <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+       
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Address</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="user.address" type="text" class="form-control"  >
+        <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Phone</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="user.phone" type="number" class="form-control"  >
+        <p class="error_msg" *ngIf="passwordError">Your phone number must have more than five caracters</p>
+      </div>
+        <div class="mb-3">
+          <label  class="form-label">City</label>
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="user.city" type="text" class="form-control"  >
+          <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+        
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Username </label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="user.username" type="text" class="form-control"  >
+        <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+      
+    </div>
+      <div class="mb-3">
+        <label  class="form-label">Email address</label>
+        <input #email="ngModel" email  [ngModelOptions]="{standalone: true}" [(ngModel)]="user.email" type="email" class="form-control"> 
+        <p *ngIf="!email.valid" class="error_msg">Please enter valid email</p>      
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" type="password" class="form-control" >
+        <p class="error_msg" *ngIf="passwordError">Your password must have more than five caracters</p>
+      </div>
+    
+      <button type="submit" class="btn btn-primary me-2">Register</button>
+      
+    </form>
+  
+  </div>
+  

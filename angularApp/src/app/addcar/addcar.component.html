@@ -1,0 +1,68 @@
+<div class="register-form">
+
+    <h1>Sell your car</h1>
+
+    <form (submit)="addCar($event)">
+      
+      <div class="mb-3">
+
+        <label   class="form-label">Title</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="car.name" type="text" class="form-control"  >
+        <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+       
+      </div>
+
+      <div class="mb-3">
+
+        <label  class="form-label">Mark</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="car.mark" type="text" class="form-control" >
+        <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+       
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Model</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="car.model" type="text" class="form-control"  >
+        <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+      </div>
+      
+      <label class="form-label">Category</label>
+      <select class="form-select" id="category_id" name="category_id" [(ngModel)]="car.category_id" >
+        <option [value]="undefined" [selected]="car.category_id===undefined" >Choose category</option>
+        <option *ngFor="let category of categorys"   [value]="category.id" [selected]="car.category_id===category.id" >{{category.name}}</option>
+       
+      </select>
+        <div class="mb-3">
+          <label  class="form-label">Fuel</label>
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="car.fuel" type="text" class="form-control"  >
+          <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+        
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Year </label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="car.year" type="number" class="form-control"  >
+        <p class="error_msg" *ngIf="yearError">Please input corect number </p>
+      
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Milage </label>
+      <input [ngModelOptions]="{standalone: true}" [(ngModel)]="car.milage" type="number" class="form-control"  >
+      <p class="error_msg" *ngIf="milageError">Please input corect number </p>
+    
+  </div>
+      <div class="mb-3">
+        <label  class="form-label">Price</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="car.price" type="number" class="form-control"> 
+        <p class="error_msg" *ngIf="priceError">Please input corect number </p>      
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Description</label>
+        <textarea [ngModelOptions]="{standalone: true}" [(ngModel)]="car.description" class="form-control"  rows="3"></textarea>
+        <p class="error_msg" *ngIf="textInputErr">Your input must have more than two caracters</p>
+      </div>
+    
+      <button type="submit" class="btn btn-primary me-2">Publish</button>
+      
+    </form>
+  
+  </div>
+  
